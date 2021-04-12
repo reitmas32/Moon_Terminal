@@ -22,7 +22,10 @@ En el directorio `example/ExampleMoonTerminal`
 - `git clone git@github.com:reitmas32/Moon.git`
 - `cd Moon`
 - `git checkout experimental`
-- `cd ..`
+- `mkdir build`
+- `cd build`
+- `cmake .. -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang -DCMAKE_BUILD_TYPE=Release -DLOGS=OFF`
+- `cd ../..`
 - `git clone git@github.com:reitmas32/Moon_Terminal.git`
 - `mkdir build`
 - `cd build`
@@ -35,6 +38,9 @@ En el directorio `example/ExampleMoonTerminal`
 - `git clone git@github.com:reitmas32/Moon.git`
 - `cd Moon`
 - `git checkout experimental`
+- `mkdir build`
+- `cd build`
+- `cmake .. -DCMAKE_CXX_COMPILER=g++ -DCMAKE_C_COMPILER=gcc -DCMAKE_BUILD_TYPE=Release -DLOGS=OFF`
 - `cd ..`
 - `git clone git@github.com:reitmas32/Moon_Terminal.git`
 - `mkdir build`
