@@ -21,7 +21,7 @@ namespace Moon::Terminal
         {
             for (std::uint16_t j = 0; j < this->w; j++)
             {
-                move(x + i, y + j);
+                move(y + i, x + j);
                 addch(this->sprite[(i * this->w) + j]);
             }
         }
