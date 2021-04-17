@@ -13,12 +13,19 @@ namespace Moon::Terminal
         nodelay(stdscr, TRUE);
     }
 
-    InputSys_t::~InputSys_t(){
+    InputSys_t::~InputSys_t()
+    {
         endwin();
     }
 
-    bool InputSys_t::alive(){
+    bool InputSys_t::alive()
+    {
         return true;
+    }
+
+    void InputSys_t::update(Moon::Terminal::Gtx_t *gtx)
+    {
+        gtx->last_key = getch();
     }
 
 } // namespace Moon::Terminal

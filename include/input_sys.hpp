@@ -28,10 +28,7 @@ namespace Moon::Terminal
 
         bool alive() override;
 
-        void update(Moon::Terminal::Gtx_t *gtx) override
-        {
-            gtx->last_key = getch();
-        }
+        void update(Moon::Terminal::Gtx_t *gtx) override;
     };
 }
 

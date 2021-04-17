@@ -1,10 +1,10 @@
 #pragma once
 
+#include <Moon/include/tools/platform_info.hpp>
 
 #include "gtx.hpp"
 #include "position_cmp.hpp"
 #include "sprite_cmp.hpp"
-
 #ifdef MOON_PLATFORM_LINUX
 #include <Moon/template/core/gtx/gtx.tpp>
 #include <Moon/template/core/sys/sys.tpp>
@@ -16,24 +16,13 @@ namespace Moon::Terminal
 
     struct RenderSys_t : Moon::Core::System_t<Moon::Terminal::Gtx_t>
     {
-        bool alive() override
-        {
-            return true;
-        }
+        RenderSys_t();
 
-        void update(Moon::Terminal::Gtx_t *gtx) override
-        {
-            wclear(stdscr);
-            for (auto &cmp : gtx->getComponents<Sprite_t>())
-            {
-                auto *pos = gtx->getRequiredComponent<Position_t<std::uint8_t>>(cmp.eid);
+        ~RenderSys_t();
 
-                if (!pos)
-                    continue;
+        bool alive() override;
 
-                cmp.draw(pos->x, pos->y);
-            }
-        }
+        void update(Moon::Terminal::Gtx_t *gtx) override;
     };
 }
 
