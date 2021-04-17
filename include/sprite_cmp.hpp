@@ -3,6 +3,9 @@
 #include <Moon/include/tools/platform_info.hpp>
 
 #ifdef MOON_PLATFORM_LINUX
+
+#include <fstream>
+
 #include <Moon/template/core/cmp/cmp.tpp>
 #include <Moon/template/core/cmp/cmp_storage.tpp>
 
@@ -20,6 +23,8 @@ namespace Moon::Terminal
             std::vector<char> sprite,
             std::uint16_t h,
             std::uint16_t w);
+
+        Sprite_t(Moon::Alias::EntityId eid, const std::string_view file);
         Sprite_t() = default;
         ~Sprite_t() = default;
 

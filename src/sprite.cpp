@@ -15,6 +15,29 @@ namespace Moon::Terminal
     {
     }
 
+    Sprite_t::Sprite_t(Moon::Alias::EntityId eid, const std::string_view file) : Moon::Core::Component_t<Sprite_t>(eid)
+    {
+        std::string line;
+        std::ifstream myfile(file);
+        if (myfile.is_open())
+        {
+            while (getline(myfile, line))
+            {
+                if (line.size() > this->w)
+                    this->w = line.size();
+                for (auto c : line)
+                {
+                    this->sprite.push_back(c);
+                }
+                this->h++;
+            }
+            myfile.close();
+        }
+
+        else
+            std::cout << "Unable to open file";
+    }
+
     void Sprite_t::draw(std::uint16_t x, std::uint16_t y)
     {
         for (std::uint16_t i = 0; i < this->h; i++)
