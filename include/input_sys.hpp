@@ -4,6 +4,8 @@
 
 #include <iostream>
 
+#include <Moon/include/tools/platform_info.hpp>
+
 #ifdef MOON_PLATFORM_LINUX
 #include <Moon/template/core/gtx/gtx.tpp>
 #include <Moon/template/core/sys/sys.tpp>
