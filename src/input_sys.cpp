@@ -17,7 +17,7 @@ namespace Moon::Terminal
         endwin();
     }
 
-    InputSys_t::alive(){
+    bool InputSys_t::alive(){
         return true;
     }
 
