@@ -15,8 +15,15 @@ set(TEMPLATE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/template)
 include_directories(
     .
     ${INCLUDE_DIR}
-    ##TODO: Eliminar de aqui o incluir las cabeceras de spdlog de otro forma
     ${TEMPLATE_DIR}
+    ##TODO: Incluir los directoriosde Moon de otra forma
+    ##TODO: Tal ves lo mejor es poner Moon-Core y Pluggins en opt dir
+    /home/rafa/git/Moon_Terminal/example/ExampleMoonTerminal/vendor
+    /home/rafa/git/Moon_Terminal/example/ExampleMoonTerminal/vendor/Moon/include
+    /home/rafa/git/Moon_Terminal/example/ExampleMoonTerminal/vendor/Moon/template
+    /home/rafa/git/Moon_Terminal/example/ExampleMoonTerminal/vendor/Moon/vendor
+    /home/rafa/git/Moon_Terminal/example/ExampleMoonTerminal/vendor/Moon/vendor/termcolor
+
 )
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2a")
 ########################
