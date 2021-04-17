@@ -20,24 +20,11 @@ namespace Moon::Terminal
     struct InputSys_t : Moon::Core::System_t<Moon::Terminal::Gtx_t>
     {
 
-        InputSys_t()
-        {
-            initscr();
-            cbreak();
-            noecho();
-            scrollok(stdscr, TRUE);
-            nodelay(stdscr, TRUE);
-        }
+        InputSys_t();
 
-        ~InputSys_t()
-        {
-            endwin();
-        }
+        ~InputSys_t();
 
-        bool alive() override
-        {
-            return true;
-        }
+        bool alive() override;
 
         void update(Moon::Terminal::Gtx_t *gtx) override
         {
