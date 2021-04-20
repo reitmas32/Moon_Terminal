@@ -24,7 +24,7 @@ namespace Moon::Terminal
             std::uint16_t h,
             std::uint16_t w);
 
-        Sprite_t(Moon::Alias::EntityId eid, const std::string_view file);
+        Sprite_t(Moon::Alias::EntityId eid, const std::string file);
         Sprite_t() = default;
         ~Sprite_t() = default;
 
