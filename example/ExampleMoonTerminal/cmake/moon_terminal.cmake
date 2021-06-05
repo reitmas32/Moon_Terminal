@@ -4,15 +4,19 @@
 if(${WIN32})
 
 elseif(${UNIX})
-set(MOON_TERMINAL_INCLUDE_DIR 
-${CMAKE_SOURCE_DIR}/vendor
-${CMAKE_SOURCE_DIR}/vendor/Moon_Terminal/include )
 
-option(LOGS "ON")
-if(${LOGS} STREQUAL "OFF")
-    add_compile_definitions(RELEASE)
-    set(MOON_TERMINAL_LIBRARIES ${CMAKE_SOURCE_DIR}/vendor/Moon_Terminal/build/libmoon_terminal.a ncurses)
-else()
-    set(MOON_TERMINAL_LIBRARIES ${CMAKE_SOURCE_DIR}/vendor/Moon_Terminal/build/libmoon_terminal.a ncurses)
-endif()
+    #   Dir of MoonStudio
+    set(MOON_STUDIO_DIR $ENV{MOON_STUDIO_DIR})
+
+    set(MOON_TERMINAL_INCLUDE_DIR 
+    ${MOON_STUDIO_DIR}
+    ${MOON_STUDIO_DIR}/Moon_Terminal/include )
+
+    option(LOGS "ON")
+    if(${LOGS} STREQUAL "OFF")
+        add_compile_definitions(RELEASE)
+        set(MOON_TERMINAL_LIBRARIES ${MOON_STUDIO_DIR}/Moon_Terminal/build/libmoon_terminal.a ncurses)
+    else()
+        set(MOON_TERMINAL_LIBRARIES ${MOON_STUDIO_DIR}/Moon_Terminal/build/libmoon_terminal.a ncurses)
+    endif()
 endif()

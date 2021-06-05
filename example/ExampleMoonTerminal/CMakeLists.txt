@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.0.0)
 
 set(NAME_PROJECT ExampleMoonTerminal)
 
-set(APP example_moon_terminal)
+set(APP moon-terminal-example)
 
 if (CMAKE_VERSION VERSION_LESS 3.0)
     PROJECT(${NAME_PROJECT} CXX)

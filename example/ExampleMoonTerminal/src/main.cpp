@@ -1,7 +1,7 @@
 #include <iostream>
 //#include <core/cmp/cmp_base.tpp>
-#include <tools/platform_info.hpp>
-#include <tools/time_step.hpp>
+#include <Moon/include/tools/platform_info.hpp>
+#include <Moon/include/tools/time_step.hpp>
 
 #include <Moon/template/core/ent/ent_base.tpp>
 #include <Moon/template/core/ent/ent.tpp>
